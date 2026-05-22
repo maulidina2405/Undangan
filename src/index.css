@@ -1,0 +1,163 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Montserrat:wght@300;400;500;600;700&family=Great+Vibes&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-serif: "Playfair Display", serif;
+  --font-sans: "Montserrat", sans-serif;
+  --font-accent: "Great Vibes", cursive;
+  
+  --color-royal-blue: #1A237E;
+  --color-navy-indigo: #0D47A1;
+  --color-gold-accent: #D4AF37;
+  --color-ivory: #FDFCF0;
+}
+
+@layer base {
+  body {
+    @apply bg-ivory text-royal-blue font-sans antialiased;
+    overflow-x: hidden;
+  }
+}
+
+.text-gold-gradient {
+  background: linear-gradient(to right, #D4AF37, #F9E29B, #D4AF37);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.bg-royal-gradient {
+  background: linear-gradient(135deg, #1A237E 0%, #0D47A1 100%);
+}
+
+.bg-sky-dreamy {
+  background: linear-gradient(to bottom, #1A237E 0%, #3944BC 60%, #E3F2FD 100%);
+}
+
+.bg-water-ripple {
+  background: linear-gradient(to bottom, #E3F2FD 0%, #B3E5FC 20%, #0D47A1 100%);
+  position: relative;
+}
+
+.bg-water-ripple::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg width='100' height='20' viewBox='0 0 100 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 10 Q25 0 50 10 Q75 20 100 10' fill='none' stroke='white' stroke-opacity='0.1' stroke-width='1'/%3E%3C/svg%3E");
+  background-size: 200px 40px;
+  animation: ripple 10s linear infinite;
+}
+
+@keyframes ripple {
+  from { background-position: 0 0; }
+  to { background-position: 200px 0; }
+}
+
+.butterfly {
+  animation: flutter 6s ease-in-out infinite;
+}
+
+@keyframes flutter {
+  0%, 100% { transform: translateY(0) rotate(5deg) scale(1); }
+  25% { transform: translateY(-10px) rotate(-2deg) scale(1.05); }
+  50% { transform: translateY(-20px) rotate(-5deg) scale(1); }
+  75% { transform: translateY(-10px) rotate(2deg) scale(0.95); }
+}
+
+.animate-gentle-float {
+  animation: float 8s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-15px); }
+}
+
+.oval-container {
+  @apply bg-white/40 backdrop-blur-xl border-4 border-white/50 shadow-2xl;
+  border-radius: 50% / 40%;
+}
+
+.event-card {
+  @apply bg-[#FDFCF0]/90 backdrop-blur-md rounded-[2rem] p-8 border border-gold-accent/30 shadow-xl relative overflow-hidden;
+}
+
+.event-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(to right, transparent, #D4AF37, transparent);
+}
+
+.btn-primary {
+  @apply bg-gold-accent text-royal-blue px-8 py-2 rounded-full font-serif text-sm tracking-wide hover:bg-navy-indigo hover:text-white transition-all shadow-md inline-flex items-center gap-2;
+}
+
+.countdown-box {
+  @apply bg-white/90 text-royal-blue p-2 rounded-lg shadow-sm border border-gold-accent/20 min-w-[60px];
+}
+
+.btn-save-date {
+  @apply bg-navy-indigo/70 backdrop-blur-md text-white px-8 py-2 rounded-full font-serif text-sm tracking-wide border border-white/30 hover:bg-gold-accent hover:text-royal-blue transition-all shadow-lg;
+}
+
+.mega-mendung-top {
+  background-image: url("data:image/svg+xml,%3Csvg width='100' height='40' viewBox='0 0 100 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 40 Q25 0 50 40 Q75 0 100 40' fill='none' stroke='%23D4AF37' stroke-opacity='0.2' stroke-width='2'/%3E%3C/svg%3E");
+}
+
+.paper-texture {
+  background-image: url('https://www.transparenttextures.com/patterns/cream-paper.png');
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 4px;
+}
+::-webkit-scrollbar-track {
+  @apply bg-ivory;
+}
+::-webkit-scrollbar-thumb {
+  @apply bg-gold-accent/50 rounded-full;
+}
+
+.floating-nav-blur {
+  @apply backdrop-blur-lg bg-white/70 border-t border-gold-accent/20;
+}
+
+.story-line {
+  @apply relative pl-8 border-l-2 border-gold-accent/30 space-y-8;
+}
+
+.story-dot {
+  @apply absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-gold-accent border-4 border-ivory;
+}
+
+.floral-corner {
+  @apply absolute pointer-events-none opacity-40;
+}
+
+.gallery-photo {
+  @apply w-full h-full object-cover transition-transform duration-700 hover:scale-110;
+}
+
+.gift-card {
+  @apply bg-white/90 backdrop-blur-md rounded-2xl p-6 shadow-xl border border-royal-blue/10 relative overflow-hidden flex flex-col items-start gap-4;
+}
+
+.gift-card-copy {
+  @apply absolute right-4 bottom-4 bg-gray-100 px-3 py-1 rounded text-[10px] font-bold flex items-center gap-1 hover:bg-royal-blue hover:text-white transition-all cursor-pointer;
+}
+
+.rsvp-stat-box {
+  @apply flex-1 p-4 rounded-xl text-center flex flex-col items-center justify-center gap-1;
+}
+
+.rsvp-input {
+  @apply w-full bg-white border border-gray-200 rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-gold-accent transition-all mb-4;
+}
+
+.arch-frame {
+  @apply rounded-t-full border-4 border-white shadow-2xl overflow-hidden relative;
+}
