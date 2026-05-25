@@ -23,7 +23,7 @@ import {
   ChevronDown,
   Send
 } from 'lucide-react';
-import ReactPlayer from 'react-player';
+import musicSource from './assets/Musik.mp3';
 import vintageBg from './assets/vintage_wedding_bg.png';
 import quoteBg from './assets/quote_section_bg.png';
 import coupleBg from './assets/couple_section_bg.png';
@@ -116,13 +116,25 @@ const BatikBorder = ({ position = 'top' }: { position?: 'top' | 'bottom' }) => (
   </div>
 );
 
-const Player = ReactPlayer as any;
-
 export default function App() {
   const [guestName, setGuestName] = useState('Tamu Undangan');
   const [adminGuestInput, setAdminGuestInput] = useState('');
   const [isOpen, setIsOpen] = useState(false);
   const [isMuted, setIsMuted] = useState(false);
+  const audioRef = useRef<HTMLAudioElement>(null);
+
+  useEffect(() => {
+    if (audioRef.current) {
+      audioRef.current.volume = 0.8;
+      if (isOpen && !isMuted) {
+        audioRef.current.play().catch((err) => {
+          console.log("Audio playback blocked: ", err);
+        });
+      } else {
+        audioRef.current.pause();
+      }
+    }
+  }, [isOpen, isMuted]);
   const [showGiftCards, setShowGiftCards] = useState(false);
   const [timeLeft, setTimeLeft] = useState<TimeLeft>({ days: 0, hours: 0, minutes: 0, seconds: 0 });
 
@@ -187,30 +199,8 @@ export default function App() {
 
   return (
     <div className="relative min-h-screen">
-      {/* Background Music (YouTube) */}
-      <div className="fixed inset-0 pointer-events-none opacity-[0.001] z-[-1]">
-        <Player
-          url="https://www.youtube.com/watch?v=TGzpx4kz9Pc"
-          playing={isOpen && !isMuted}
-          loop={true}
-          volume={0.8}
-          muted={!isOpen || isMuted} // Start muted to satisfy modern browser autoplay policies, unmute only after user click interaction
-          playsinline
-          config={{
-            youtube: {
-              playerVars: {
-                autoplay: 0, // Controlled by react-player's playing prop to avoid initial loading blocks
-                controls: 0,
-                modestbranding: 1,
-                rel: 0,
-                showinfo: 0,
-                iv_load_policy: 3,
-                origin: window.location.origin
-              }
-            }
-          } as any}
-        />
-      </div>
+      {/* Background Music (Local HTML5 Audio) */}
+      <audio ref={audioRef} src={musicSource} loop preload="auto" />
 
       {/* 1. Cinematic Opening (Cover) */}
       <AnimatePresence>
@@ -517,7 +507,7 @@ export default function App() {
             </div>
 
             <a
-              href="https://www.google.com/maps/place//@-7.6972497,112.7102253,17z/data=!4m6!1m5!3m4!2zN8KwNDEnNTAuMSJTIDExMsKwNDInNDYuMSJF!8m2!3d-7.6972497!4d112.7128002?hl=en&entry=ttu&g_ep=EgoyMDI2MDUxNy4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noreferrer"
+              href="https://www.google.com/maps/dir/?api=1&destination=-7.6970224,112.7104578" target="_blank" rel="noreferrer"
               className="btn-primary mt-6 hover:scale-105"
             >
               <MapPin className="w-4 h-4" /> Lokasi Acara
@@ -548,7 +538,7 @@ export default function App() {
             </div>
 
             <a
-              href="https://www.google.com/maps/place//@-7.6972497,112.7102253,17z/data=!4m6!1m5!3m4!2zN8KwNDEnNTAuMSJTIDExMsKwNDInNDYuMSJF!8m2!3d-7.6972497!4d112.7128002?hl=en&entry=ttu&g_ep=EgoyMDI2MDUxNy4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noreferrer"
+              href="https://www.google.com/maps/dir/?api=1&destination=-7.6970224,112.7104578" target="_blank" rel="noreferrer"
               className="btn-primary mt-6 hover:scale-105"
             >
               <MapPin className="w-4 h-4" /> Lokasi Acara
@@ -794,7 +784,7 @@ export default function App() {
             </div>
 
             <a
-              href="https://www.google.com/maps/place//@-7.6972497,112.7102253,17z/data=!4m6!1m5!3m4!2zN8KwNDEnNTAuMSJTIDExMsKwNDInNDYuMSJF!8m2!3d-7.6972497!4d112.7128002?hl=en&entry=ttu&g_ep=EgoyMDI2MDUxNy4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noreferrer"
+              href="https://www.google.com/maps/dir/?api=1&destination=-7.6970224,112.7104578" target="_blank" rel="noreferrer"
               className="inline-flex items-center gap-3 px-12 py-4 bg-gold-accent text-royal-blue rounded-full font-bold shadow-xl hover:bg-ivory transition-all transform hover:-translate-y-1"
             >
               PETUNJUK LOKASI <MapIcon className="w-4 h-4" />
