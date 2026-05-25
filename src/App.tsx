@@ -233,30 +233,30 @@ export default function App() {
                 variants={staggerContainer}
                 initial="initial"
                 animate="animate"
-                className="animate-gentle-float w-full max-w-[320px] aspect-[3/4] flex flex-col items-center justify-center space-y-8 p-10"
+                className="animate-gentle-float w-full max-w-[290px] flex flex-col items-center justify-center space-y-4 py-6 px-4"
               >
-                <div className="space-y-4">
-                  <motion.div variants={fadeInUp} className="space-y-1 mb-2">
-                    <p className="text-xl font-serif text-gold-accent select-none">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</p>
-                    <p className="text-[7.5px] font-sans font-bold tracking-[0.2em] text-royal-blue/60 uppercase leading-relaxed max-w-[260px] mx-auto">
+                <div className="space-y-2">
+                  <motion.div variants={fadeInUp} className="space-y-1 mb-1">
+                    <p className="text-lg font-serif text-gold-accent select-none">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</p>
+                    <p className="text-[7px] font-sans font-bold tracking-[0.2em] text-royal-blue/60 uppercase leading-relaxed max-w-[240px] mx-auto">
                       ATAS BERKAT ROCHMAT ALLOH YANG MAHA KUASA
                     </p>
                   </motion.div>
-                  <motion.p variants={fadeInUp} className="font-serif italic text-royal-blue/70 text-xs mb-1">The Wedding of</motion.p>
-                  <motion.h1 variants={fadeInUp} className="text-5xl md:text-6xl font-accent text-gold-accent leading-tight py-2">
+                  <motion.p variants={fadeInUp} className="font-serif italic text-royal-blue/70 text-xs mb-0.5">The Wedding of</motion.p>
+                  <motion.h1 variants={fadeInUp} className="text-4xl md:text-5xl font-accent text-gold-accent leading-tight">
                     Yayang <br />
-                    <span className="text-3xl">&</span> <br />
+                    <span className="text-2xl">&</span> <br />
                     Irfan
                   </motion.h1>
                   <motion.div variants={fadeInUp} className="w-12 h-[1px] bg-royal-blue/30 mx-auto" />
                 </div>
 
-                <motion.div variants={fadeInUp} className="space-y-4">
-                  <p className="font-sans text-[11px] font-medium text-navy-indigo/70 tracking-widest uppercase mb-2">Minggu, 31 Mei 2026</p>
+                <motion.div variants={fadeInUp} className="space-y-2.5">
+                  <p className="font-sans text-[10px] font-medium text-navy-indigo/70 tracking-widest uppercase mb-1">Minggu, 31 Mei 2026</p>
 
-                  <div className="mb-6 py-2 border-y border-royal-blue/10">
-                    <p className="text-[10px] font-medium text-royal-blue/60 uppercase tracking-[0.2em] mb-1 italic">Kepada Yth. Bapak/Ibu/Saudara/i</p>
-                    <p className="text-xl font-serif text-royal-blue font-bold tracking-wide italic">{guestName}</p>
+                  <div className="mb-3 py-1.5 border-y border-royal-blue/10">
+                    <p className="text-[9px] font-medium text-royal-blue/60 uppercase tracking-[0.2em] mb-0.5 italic">Kepada Yth. Bapak/Ibu/Saudara/i</p>
+                    <p className="text-lg font-serif text-royal-blue font-bold tracking-wide italic">{guestName}</p>
                   </div>
 
                   <button
@@ -302,23 +302,23 @@ export default function App() {
             initial="initial"
             whileInView="animate"
             viewport={{ once: true }}
-            className="w-full max-w-[320px] aspect-[4/6] flex flex-col items-center justify-center space-y-8 p-10 z-10 animate-gentle-float"
+            className="w-full max-w-[290px] flex flex-col items-center justify-center space-y-4 py-6 px-4 z-10 animate-gentle-float"
           >
-            <div className="space-y-4">
-              <motion.div variants={fadeInUp} className="space-y-1 mb-2">
-                <p className="text-xl font-serif text-gold-accent select-none">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</p>
-                <p className="text-[7.5px] font-sans font-bold tracking-[0.2em] text-royal-blue/60 uppercase leading-relaxed max-w-[260px] mx-auto">
+            <div className="space-y-2">
+              <motion.div variants={fadeInUp} className="space-y-1 mb-1">
+                <p className="text-lg font-serif text-gold-accent select-none">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</p>
+                <p className="text-[7px] font-sans font-bold tracking-[0.2em] text-royal-blue/60 uppercase leading-relaxed max-w-[240px] mx-auto">
                   ATAS BERKAT ROCHMAT ALLOH YANG MAHA KUASA
                 </p>
               </motion.div>
               <motion.p variants={fadeInUp} className="font-serif text-xs text-royal-blue/80 italic tracking-widest">The Wedding of</motion.p>
-              <motion.h2 variants={fadeInUp} className="text-5xl font-accent text-gold-accent py-2 leading-tight">
+              <motion.h2 variants={fadeInUp} className="text-4xl font-accent text-gold-accent leading-tight">
                 Yayang <br />
-                <span className="text-3xl">&</span> <br />
+                <span className="text-2xl">&</span> <br />
                 Irfan
               </motion.h2>
-              <motion.p variants={fadeInUp} className="font-serif text-sm text-royal-blue/60 mt-4 tracking-widest">31 . 05 . 2026</motion.p>
-              <div className="w-12 h-[1px] bg-royal-blue/30 mx-auto mt-6" />
+              <motion.p variants={fadeInUp} className="font-serif text-sm text-royal-blue/60 mt-2 tracking-widest">31 . 05 . 2026</motion.p>
+              <div className="w-12 h-[1px] bg-royal-blue/30 mx-auto mt-3" />
             </div>
 
             <motion.button
@@ -398,7 +398,7 @@ export default function App() {
             </div>
             <div className="space-y-2">
               <h4 className="text-3xl font-serif text-royal-blue">Yayang Aisyawa Syakhilla</h4>
-              <p className="text-[11px] font-medium opacity-50 uppercase tracking-widest mt-2 max-w-[250px] mx-auto leading-relaxed">Putri Kedua dari Bapak Sali <br /> & Ibu Indah Malisya yatin</p>
+              <p className="text-[11px] font-medium opacity-50 uppercase tracking-widest mt-2 max-w-[250px] mx-auto leading-relaxed">Putri pertama dari Bapak Sali <br /> & Ibu Indah Malisya yatin</p>
             </div>
           </motion.div>
 
@@ -420,7 +420,7 @@ export default function App() {
             </div>
             <div className="space-y-2">
               <h4 className="text-3xl font-serif text-royal-blue">Mochammad Irfan Arifin</h4>
-              <p className="text-[11px] font-medium opacity-50 uppercase tracking-widest mt-2 max-w-[250px] mx-auto leading-relaxed">Putra Kedua dari Bapak Rohmat <br /> & Ibu Chusnia</p>
+              <p className="text-[11px] font-medium opacity-50 uppercase tracking-widest mt-2 max-w-[250px] mx-auto leading-relaxed">Putra Ketiga dari Bapak Rohmat <br /> & Ibu Chusnia</p>
             </div>
           </motion.div>
         </section>
@@ -429,10 +429,10 @@ export default function App() {
         <section id="countdown" className="relative py-16 flex flex-col items-center justify-center text-center p-8 overflow-hidden">
           {/* Steel Blue & Top Floral Border Background */}
           <div className="absolute inset-0 z-0 overflow-hidden">
-            <img 
-              src={countdownBg} 
-              alt="Countdown Background" 
-              className="absolute -top-20 -bottom-20 -left-20 -right-20 w-[calc(100%+10rem)] h-[calc(100%+10rem)] object-cover origin-center" 
+            <img
+              src={countdownBg}
+              alt="Countdown Background"
+              className="absolute -top-20 -bottom-20 -left-20 -right-20 w-[calc(100%+10rem)] h-[calc(100%+10rem)] object-cover origin-center"
               style={{ transform: 'scale(1.6) rotate(-2.2deg)' }}
             />
             <div className="absolute top-0 left-0 right-0 h-48 bg-gradient-to-b from-ivory to-transparent pointer-events-none z-10" />
@@ -556,9 +556,8 @@ export default function App() {
           </motion.div>
         </section>
 
-        {/* 7. Love Story Section (Image 9 & 10) */}
+        {/* 7. Love Story Section (Image 9 & 10) - Hidden as requested
         <section id="story" className="py-12 px-8 relative overflow-hidden flex flex-col items-center bg-ivory">
-          {/* Misty Watercolor Background */}
           <div className="absolute inset-0 z-0 overflow-hidden">
             <div className="absolute -top-[8%] -bottom-[8%] -left-[8%] -right-[8%] w-[116%] h-[116%] overflow-hidden">
               <img src={storySectionBg} alt="Misty Background" className="w-full h-full object-cover scale-115 origin-center" />
@@ -583,7 +582,6 @@ export default function App() {
             <img src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&q=80&w=800" alt="Story Intro" className="w-full h-full object-cover" />
           </motion.div>
 
-          {/* Story Timeline (Image 10) */}
           <div className="w-full max-w-sm space-y-8 py-4 z-10">
             <div className="story-line">
               <div className="story-dot" />
@@ -616,6 +614,7 @@ export default function App() {
             </div>
           </div>
         </section>
+        */}
 
         {/* 11. Gallery Section (Images 11 & 12) */}
         <section id="gallery" className="py-12 px-8 relative overflow-hidden flex flex-col items-center bg-ivory">
